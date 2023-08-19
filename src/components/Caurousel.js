@@ -13,7 +13,7 @@ const Carousel = () => {
     const handleScroll = () => {
         // Calculate the scroll position and set isGhostOnLeft accordingly
         const scrollPosition = window.scrollY;
-        setIsGhostOnLeft(scrollPosition > 200); // Adjust the threshold as needed
+        setIsGhostOnLeft(scrollPosition > 600); // Adjust the threshold as needed
     };
 
     // Attach the scroll event listener when the component mounts
@@ -27,7 +27,7 @@ const Carousel = () => {
 
     // Render the Carousel component
     return (
-        <Box w="100%" m="20px auto">
+        <Box w="100%" m="60px auto">
             <Flex w={"90%"} margin={"auto"}>
                 {/* Animation for the first text */}
                 <motion.div
@@ -35,7 +35,7 @@ const Carousel = () => {
                     animate={{ opacity: 1, x: isGhostOnLeft ? 0 : -800 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                 >
-                    <Text fontSize={['xl', '4xl']} color={['gray.600', 'black']}>
+                    <Text m={"40px"} fontSize={['xl', '4xl']} color={['gray.600', 'black']}>
                         Does this sound familiar . . .
                     </Text>
                 </motion.div>

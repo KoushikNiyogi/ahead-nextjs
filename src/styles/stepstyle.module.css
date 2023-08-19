@@ -1,0 +1,31 @@
+/* StepStyles.module.css */
+.customStep {
+    opacity: 0.3;
+    cursor: pointer;
+    transition: opacity 0.3s, background-color 0.3s;
+  }
+  
+  .customStep:hover {
+    opacity: 0.9;
+    background-color: whitesmoke;
+  }
+  
+  .customSeparator {
+    border: 1px solid blue;
+    transition: border-color 0.3s;
+  }
+  
+  .customStep:hover .chakra_step_indicator {
+    opacity: 0.9;
+    transform: scale(1.2); /* Increase the size on hover */
+  }
+  
+  .customStep:hover .chakra-step-title,
+  .customStep:hover .chakra-step-description {
+    opacity: 0.9;
+  }
+  
+  .customStep:hover .customSeparator {
+    border-color: blue;
+  }
+  

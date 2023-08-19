@@ -12,6 +12,9 @@ import Vacancies from '@/components/Vacancies'
 import Footer from '@/components/Footer'
 import Work from '@/components/Work'
 import Stepper_section from '@/components/Stepper_section'
+import VerticalSetter from '@/components/VerticalSetter'
+import Display1 from '@/components/Display1'
+import Display2 from '@/components/Display2'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,9 +23,11 @@ export default function Home() {
   return (
     <Box>
       <Navbar />
+      <Display1/>
       <Content_section/>
-      <Box h={"400px"} bg={"black"}></Box>
       <Carousel/>
+      <Display2/>
+      <VerticalSetter/>
       <Content_section2/>
       <Stepper_section/>
       <Test_Recommendation />
