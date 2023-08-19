@@ -1,29 +1,35 @@
+// Import required dependencies
 import { Box, Flex, Text } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
 import '@fortawesome/fontawesome-free/css/all.css';
 
+// Define the Carousel component
 const Carousel = () => {
+    // State to track whether the ghost element is on the left side
     const [isGhostOnLeft, setIsGhostOnLeft] = useState(false);
 
+    // Function to handle scroll events
     const handleScroll = () => {
         // Calculate the scroll position and set isGhostOnLeft accordingly
         const scrollPosition = window.scrollY;
-        console.log(scrollPosition);
         setIsGhostOnLeft(scrollPosition > 200); // Adjust the threshold as needed
     };
 
-    // Attach the scroll event listener
+    // Attach the scroll event listener when the component mounts
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => {
+            // Remove the scroll event listener when the component unmounts
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
 
+    // Render the Carousel component
     return (
         <Box w="100%" m="20px auto">
             <Flex w={"90%"} margin={"auto"}>
+                {/* Animation for the first text */}
                 <motion.div
                     initial={{ opacity: 0, x: -800 }}
                     animate={{ opacity: 1, x: isGhostOnLeft ? 0 : -800 }}
@@ -34,7 +40,8 @@ const Carousel = () => {
                     </Text>
                 </motion.div>
 
-                <Box style={{ display: 'flex', alignItems: 'center' }}>
+                <Box style={{ display: 'flex', alignItems: 'center' ,marginLeft:"10px"}}>
+                    {/* Animation for the ghost icon */}
                     <motion.i
                         initial={{ opacity: 0, x: 1000 }}
                         animate={{ opacity: 1, x: isGhostOnLeft ? -10 : 1000, rotate: isGhostOnLeft ? -45 : 0 }}
@@ -45,7 +52,7 @@ const Carousel = () => {
                 </Box>
             </Flex>
 
-
+            {/* Carousel items with animations */}
             <Flex width="100%"
                 overflowX="hidden"
                 position="relative"
@@ -59,49 +66,56 @@ const Carousel = () => {
                     },
                 }}>
                 
-                
+                {/* Slide 1 */}
                 <Box margin={"0 10px"} p={"25px 0px 10px 25px"} borderRadius={"10px"} bg={"#fff7e9"} >
-                    <i class="fa-solid fa-face-frown" style={{ fontSize: "26px", color: "gold", bg: "white" }}></i>
+                    <i className="fa-solid fa-face-frown" style={{ fontSize: "26px", color: "gold", bg: "white" }}></i>
                     <Text margin={"10px  0"} fontSize={"md"} fontWeight={"bold"}>You are at a lively dinner party</Text>
                     <Text fontSize={"md"} >You play on your phone, instead </Text>
                     <Text fontSize={"md"} >of confidently approaching strangers  </Text>
                     <Text fontSize={"md"} >and striking up a chat</Text>
                 </Box>
+                
+                {/* Slide 2 */}
                 <Box margin={"0 10px"} p={"25px 0px 10px 25px"} borderRadius={"10px"} bg={"#d8f2ff"}>
-                    <i class="fa-solid fa-face-grin-tears" style={{ fontSize: "26px", color: "gold", bg: "white" }}></i>
-                    <Text margin={"10px  0"} fontSize={"md"} fontWeight={"bold"}>You hit dead end in negotiation</Text>
-                    <Text fontSize={"md"} >You get nervous, frazzled and frustrated.</Text>
-                    <Text fontSize={"md"} >instead of staying optimistic and</Text>
-                    <Text fontSize={"md"} >solution oriented.</Text>
+                    <i className="fa-solid fa-face-grin-tears" style={{ fontSize: "26px", color: "gold", bg: "white" }}></i>
+                    <Text margin={"10px  0"} fontSize={"md"} fontWeight={"bold"}>You hit a dead end in negotiation</Text>
+                    <Text fontSize={"md"} >You get nervous, frazzled, and frustrated.</Text>
+                    <Text fontSize={"md"} >Instead of staying optimistic and</Text>
+                    <Text fontSize={"md"} >solution-oriented.</Text>
                 </Box>
+                
+                {/* Slide 3 */}
                 <Box margin={"0 10px"} p={"25px 0px 10px 25px"} borderRadius={"10px"} bg={"#eeebfe"} >
-                    <i class="fa-solid fa-face-angry" style={{ fontSize: "26px", color: "gold", bg: "white" }}></i>
+                    <i className="fa-solid fa-face-angry" style={{ fontSize: "26px", color: "gold", bg: "white" }}></i>
                     <Text margin={"10px  0"} fontSize={"md"} fontWeight={"bold"}>You argue with a colleague</Text>
                     <Text fontSize={"md"} >You get angry and defensive, instead of</Text>
                     <Text fontSize={"md"} >staying and working towards</Text>
-                    <Text fontSize={"md"} >comman ground</Text>
+                    <Text fontSize={"md"} >common ground</Text>
                 </Box>
-                <Box margin={"0 30px"} p={"25px 0px 10px 25px"} borderRadius={"10px"} bg={"blue.300"} color={"white"} transform={"roatate(-4deg)"} >
-                    <i class="fa-solid fa-face-flushed" style={{ fontSize: "26px", color: "gold", bg: "white" }}></i>
+                
+                {/* Slide 4 */}
+                <Box margin={"0 30px"} p={"25px 0px 10px 25px"} borderRadius={"10px"} bg={"blue.300"} color={"white"} transform={"rotate(-4deg)"} >
+                    <i className="fa-solid fa-face-flushed" style={{ fontSize: "26px", color: "gold", bg: "white" }}></i>
                     <Text margin={"10px  0"} fontSize={"md"} fontWeight={"bold"}>You get a promotion at work</Text>
                     <Text fontSize={"md"} >You question yourself and wonder when</Text>
                     <Text fontSize={"md"} >they'll realize you're an unqualified</Text>
                     <Text fontSize={"md"} >imposter, instead of trusting yourself &</Text>
                     <Text fontSize={"md"} >your abilities</Text>
                 </Box>
+                
+                {/* Slide 5 */}
                 <Box margin={"0 30px"} p={"25px 0px 10px 25px"} borderRadius={"10px"} bg={"#ffefd5"} >
-                    <i class="fa-solid fa-face-grin-wink" style={{ fontSize: "26px", color: "gold", bg: "white" }}></i> 
-                    <Text margin={"10px  0"} fontSize={"md"} fontWeight={"bold"}>You get a promotion at work</Text>
-                    <Text fontSize={"md"} >You attend class reunion</Text>
+                    <i className="fa-solid fa-face-grin-wink" style={{ fontSize: "26px", color: "gold", bg: "white" }}></i> 
+                    <Text margin={"10px  0"} fontSize={"md"} fontWeight={"bold"}>You attend a className reunion</Text>
                     <Text fontSize={"md"} >You compare yourself with your peers'</Text>
                     <Text fontSize={"md"} >achievements, instead of making your</Text>
-                    <Text fontSize={"md"} >self-judgement more independent of others.</Text>
+                    <Text fontSize={"md"} >self-judgment more independent of others.</Text>
                 </Box>
-
+                
             </Flex>
         </Box>
-
     );
 };
 
+// Export the Carousel component as the default export
 export default Carousel;
