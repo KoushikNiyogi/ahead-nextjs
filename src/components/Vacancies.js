@@ -28,8 +28,7 @@ const Vacancies = () => {
     const handleScroll = () => {
         // Calculate the scroll position and set isGhostOnLeft accordingly
         const scrollPosition = window.scrollY;
-        console.log(scrollPosition);
-        setIsGhostOnLeft(scrollPosition > 1300); // Adjust the threshold as needed
+        setIsGhostOnLeft(scrollPosition > 3900); // Adjust the threshold as needed
     };
 
     // Attach the scroll event listener when the component mounts

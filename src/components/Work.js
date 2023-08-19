@@ -20,7 +20,7 @@ const data = [
         content: "Ahead family feels like a game, not like a chore.See yourself grow every day towards achieving your gaols!."
     },
     {
-        title: "Master how to =make it happen in real life",
+        title: "Master how to make it happen in real life",
         content: "We support you towards ninja-level skills with sleek tools such as dry-runs, quizes,and flashcards"
     },
     {
@@ -43,8 +43,7 @@ const Work = () => {
     const handleScroll = () => {
         // Calculate the scroll position and set isGhostOnLeft accordingly
         const scrollPosition = window.scrollY;
-        console.log(scrollPosition)
-        setIsGhostOnLeft(scrollPosition > 1300); // Adjust the threshold as needed
+        setIsGhostOnLeft(scrollPosition > 3200); // Adjust the threshold as needed
         if (scrollY > 1300) {
             const step = Math.floor((scrollY - 1300) / 360);
             const remainder = (scrollY - 1300) % 360;

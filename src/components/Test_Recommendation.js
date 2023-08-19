@@ -2,7 +2,7 @@ import React from 'react'
 import {Box,Text,Button} from "@chakra-ui/react"
 const Test_Recommendation = () => {
   return (
-    <Box w={"90%"} margin={"10px auto"} textAlign={"center"} padding={"200px"}>
+    <Box w={"90%"} margin={"10px auto"} textAlign={"center"} padding={"50px"}>
       <Text fontSize={"md"} mb={"10px"}>We take privacy seriously</Text>
       <Text fontSize={"lg"} fontWeight={"bold"} mb={"10px"}>Before you get started</Text>       
       <Text fontSize={"md"}  mb={"10px"}>"We won't share your answers with anyone(and won't ever tell</Text>  
